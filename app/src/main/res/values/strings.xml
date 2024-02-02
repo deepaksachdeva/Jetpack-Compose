@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Jetpack-Compose</string>
+    <string name="back_button">Back</string>
+
+    <string name="simple_text">Simple Text</string>
+    <string name="style_text">Style Text</string>
+    <string name="text_field">Text Field</string>
+    <string name="column">Column</string>
+    <string name="lazy_column">Lazy Column</string>
+    <string name="row">Row</string>
+    <string name="lazy_row">Lazy Row</string>
+    <string name="box">Box</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="button">Button</string>
+    <string name="card">Card</string>
+    <string name="image">Image</string>
+    <string name="alert_dialog">Alert Dialog</string>
+    <string name="single_choice_dialog">Single Choice Dialog</string>
+</resources>
