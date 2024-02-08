@@ -31,12 +31,20 @@ import com.deepak.jetpack_compose.text.SimpleText
 import com.deepak.jetpack_compose.text.StyleText
 import com.deepak.jetpack_compose.text.TextFields
 import com.deepak.jetpack_compose.ui.theme.JetpackComposeTheme
+import com.deepak.jetpack_compose.uicomponents.AlertDialogComp
 import com.deepak.jetpack_compose.uicomponents.BoxComp
+import com.deepak.jetpack_compose.uicomponents.ButtonComp
+import com.deepak.jetpack_compose.uicomponents.CardComponent
 import com.deepak.jetpack_compose.uicomponents.ColumnComp
 import com.deepak.jetpack_compose.uicomponents.ConstraintLayoutComponent
+import com.deepak.jetpack_compose.uicomponents.CountriesDialog
+import com.deepak.jetpack_compose.uicomponents.CountriesDialogUsingLazyColumn
+import com.deepak.jetpack_compose.uicomponents.ImageComponent
 import com.deepak.jetpack_compose.uicomponents.LazyColumnComp
 import com.deepak.jetpack_compose.uicomponents.LazyRowComp
 import com.deepak.jetpack_compose.uicomponents.RowComponent
+import com.deepak.jetpack_compose.uicomponents.SingleChoiceDialogComp
+import com.deepak.jetpack_compose.uicomponents.SingleChoiceDialogWithLazyColumnComp
 
 /**
  * enum values that represent the screens in the app
@@ -56,7 +64,8 @@ enum class JetpackScreen(@StringRes val title: Int) {
     Card(title = R.string.card),
     Image(title = R.string.image),
     AlertDialog(title = R.string.alert_dialog),
-    SingleChoiceDialog(title = R.string.single_choice_dialog)
+    SingleChoiceDialog(title = R.string.single_choice_dialog),
+    SingleChoiceDialogLazyColumn(title = R.string.single_choice_dialog_lazy_column)
 }
 
 @Composable
@@ -133,6 +142,26 @@ fun JetpackComposeAppScreens(
                                     context.getString(R.string.button) -> {
                                         navController.navigate(JetpackScreen.Button.name)
                                     }
+
+                                    context.getString(R.string.card) -> {
+                                        navController.navigate(JetpackScreen.Card.name)
+                                    }
+
+                                    context.getString(R.string.image) -> {
+                                        navController.navigate(JetpackScreen.Image.name)
+                                    }
+
+                                    context.getString(R.string.alert_dialog) -> {
+                                        navController.navigate(JetpackScreen.AlertDialog.name)
+                                    }
+
+                                    context.getString(R.string.single_choice_dialog) -> {
+                                        navController.navigate(JetpackScreen.SingleChoiceDialog.name)
+                                    }
+
+                                    context.getString(R.string.single_choice_dialog_lazy_column) -> {
+                                        navController.navigate(JetpackScreen.SingleChoiceDialogLazyColumn.name)
+                                    }
                                 }
                             }
                         )
@@ -173,26 +202,30 @@ fun JetpackComposeAppScreens(
                         ConstraintLayoutComponent()
                     }
 
-                    composable(route = JetpackScreen.ConstraintLayout.name) {
-                        ConstraintLayoutComponent()
-                    }
-
-                    composable(route = JetpackScreen.ConstraintLayout.name) {
-                        ConstraintLayoutComponent()
-                    }
-
-                    composable(route = JetpackScreen.ConstraintLayout.name) {
-                        ConstraintLayoutComponent()
-                    }
-
-                    composable(route = JetpackScreen.ConstraintLayout.name) {
-                        ConstraintLayoutComponent()
-                    }
-
                     composable(route = JetpackScreen.Button.name) {
-                        Text(
-                            text = "Button"
-                        )
+                        ButtonComp()
+                    }
+
+                    composable(route = JetpackScreen.Card.name) {
+                        CardComponent()
+                    }
+
+                    composable(route = JetpackScreen.Image.name) {
+                        ImageComponent()
+                    }
+
+                    composable(route = JetpackScreen.AlertDialog.name) {
+                        AlertDialogComp()
+                    }
+
+                    composable(route = JetpackScreen.SingleChoiceDialog.name) {
+                        CountriesDialog()
+                        SingleChoiceDialogComp()
+                    }
+
+                    composable(route = JetpackScreen.SingleChoiceDialogLazyColumn.name) {
+                        CountriesDialogUsingLazyColumn()
+                        SingleChoiceDialogWithLazyColumnComp()
                     }
                 }
             }

@@ -17,7 +17,6 @@ package com.deepak.jetpack_compose.data
 
 import com.deepak.jetpack_compose.R
 
-
 object DataSource {
     val uiItems = listOf(
         R.string.simple_text,
@@ -33,6 +32,7 @@ object DataSource {
         R.string.card,
         R.string.image,
         R.string.alert_dialog,
-        R.string.single_choice_dialog
+        R.string.single_choice_dialog,
+        R.string.single_choice_dialog_lazy_column
     )
 }
